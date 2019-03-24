@@ -9,12 +9,17 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Random;
 import javax.swing.*;
 
 public class MotionParallaxMain extends JFrame {
    private int currentX = 0 ; // Mouse cursor's X position
    private int currentY = 0 ; // Mouse cursor's Y position 
    private int delay = 25;
+   Random rand = new Random();
+   Color randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
+   Color randomColor2 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
+   Color randomColor3 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
    protected Timer timer;
    MotionParallaxMain()
    {
@@ -57,13 +62,15 @@ public class MotionParallaxMain extends JFrame {
       int treeTrunkY = 400;
       int treeLeafsX = 379; 
       int treeLeafsY = 352;
-
-      int treeTrunkX;
-      int num;
+      int sunX = 150;
+      int sunY = 100;
+      
 
       
       for (int i = 0; i < 3; i++)
       {
+          sunX += currentX * 0.01;
+          sunY += currentY * 0.01;
           darkGrayMountainX[i] += currentX * .2;
           darkGreyMountainY[i] += currentY * .2;
           lightGrayMountainX[i] += currentX * .3; 
@@ -83,6 +90,10 @@ public class MotionParallaxMain extends JFrame {
       //Sets background for the sky
       g.setColor(Color.blue);
       g.fillRect(0, 0, 500, 500);
+      
+            //draws the sun
+      g.setColor(Color.YELLOW);
+      g.fillOval(sunX, sunY, 50,50);
       
       //Draws the mountains 
       g.setColor(Color.darkGray);
