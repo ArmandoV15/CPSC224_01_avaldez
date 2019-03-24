@@ -64,6 +64,7 @@ public class MotionParallaxMain extends JFrame {
       int treeLeafsY = 352;
       int sunX = 150;
       int sunY = 100;
+      int num = 0;
       
 
       
