@@ -15,12 +15,14 @@ import javax.swing.*;
 public class MotionParallaxMain extends JFrame {
    private int currentX = 0 ; // Mouse cursor's X position
    private int currentY = 0 ; // Mouse cursor's Y position 
-   private int delay = 25;
+   private int delay = 10;
    Random rand = new Random();
    Color randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
    Color randomColor2 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
    Color randomColor3 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
    Color backgroundColor = new Color(0,191,245);
+   int birdX = 20;
+   int birdX2 = 35;
    protected Timer timer;
    MotionParallaxMain()
    {
@@ -45,7 +47,7 @@ public class MotionParallaxMain extends JFrame {
    {
       // Call the superclass's paint method.
       super.paint(g);
-<<<<<<< HEAD
+
        int darkGrayMountainX[] = {56, 250, 520};
        int darkGreyMountainY[] = {550, 80, 550};
        int lightGrayMountainX[] = {-450, 50, 450};
@@ -59,26 +61,11 @@ public class MotionParallaxMain extends JFrame {
        int treeLeafsX = 379; 
        int treeLeafsY = 352;
        int sunX = 150;
-       int sunY = 100;
-    
-=======
-      int darkGrayMountainX[] = {56, 250, 520};
-      int darkGreyMountainY[] = {550, 80, 550};
-      int lightGrayMountainX[] = {-450, 50, 450};
-      int lightGrayMountainY[] = {550, 150, 550};
-      int blackMountainX[] = {135, 450, 700};
-      int blackMountainY[] = {550, 150, 550};
-      int grassX = -200;
-      int grassY = 350;
-      int treeTrunkX = 400;
-      int treeTrunkY = 400;
-      int treeLeafsX = 379; 
-      int treeLeafsY = 352;
-      int sunX = 150;
-      int sunY = 100;
+       int sunY = 100; 
+       
       
       
->>>>>>> 2481247542dcd3781efd47947a7608cbd77ef9a9
+
       for (int i = 0; i < 3; i++)
       {
           sunX += currentX * 0.01;
@@ -115,6 +102,10 @@ public class MotionParallaxMain extends JFrame {
       g.setColor(randomColor3);
       g.fillPolygon(blackMountainX, blackMountainY, 3);
       
+      g.setColor(Color.BLACK);
+      g.drawLine(birdX, 85, birdX2, 95);
+      g.drawLine(birdX + 15,95, birdX2 + 15, 85);
+      
       //Draws the grass
       g.setColor(Color.GREEN);
       g.fillRect(grassX, grassY, 1500, 350);
@@ -132,19 +123,14 @@ public class MotionParallaxMain extends JFrame {
    private class MyMouseListener implements MouseListener
    {
       public void mousePressed(MouseEvent e)
-<<<<<<< HEAD
+
       {
-          
+               backgroundColor = new Color(0,0,128);
+            repaint();
         
       }
-=======
-      {     
-            backgroundColor = new Color(0,0,128);
-            repaint();
-        }
-      
-      
->>>>>>> 2481247542dcd3781efd47947a7608cbd77ef9a9
+
+
       public void mouseClicked(MouseEvent e)
       {
         randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
@@ -161,17 +147,18 @@ public class MotionParallaxMain extends JFrame {
 
       public void mouseEntered(MouseEvent e)
       {
+          birdX += 100;
+          birdX2 += 100;
+          repaint();
       }
 
       public void mouseExited(MouseEvent e)
       {
-<<<<<<< HEAD
+
           currentX = 0;
           currentY = 0;
           repaint();
-=======
-         
->>>>>>> 2481247542dcd3781efd47947a7608cbd77ef9a9
+
       }
    }
  
