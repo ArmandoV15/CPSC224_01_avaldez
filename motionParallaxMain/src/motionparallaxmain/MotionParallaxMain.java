@@ -57,6 +57,10 @@ public class MotionParallaxMain extends JFrame {
       int treeTrunkY = 400;
       int treeLeafsX = 379; 
       int treeLeafsY = 352;
+
+      int treeTrunkX;
+      int num;
+
       
       for (int i = 0; i < 3; i++)
       {
