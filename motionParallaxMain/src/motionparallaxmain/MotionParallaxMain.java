@@ -20,6 +20,7 @@ public class MotionParallaxMain extends JFrame {
    Color randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
    Color randomColor2 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
    Color randomColor3 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
+   Color backgroundColor = new Color(0,191,245);
    protected Timer timer;
    MotionParallaxMain()
    {
@@ -44,6 +45,7 @@ public class MotionParallaxMain extends JFrame {
    {
       // Call the superclass's paint method.
       super.paint(g);
+<<<<<<< HEAD
        int darkGrayMountainX[] = {56, 250, 520};
        int darkGreyMountainY[] = {550, 80, 550};
        int lightGrayMountainX[] = {-450, 50, 450};
@@ -59,6 +61,24 @@ public class MotionParallaxMain extends JFrame {
        int sunX = 150;
        int sunY = 100;
     
+=======
+      int darkGrayMountainX[] = {56, 250, 520};
+      int darkGreyMountainY[] = {550, 80, 550};
+      int lightGrayMountainX[] = {-450, 50, 450};
+      int lightGrayMountainY[] = {550, 150, 550};
+      int blackMountainX[] = {135, 450, 700};
+      int blackMountainY[] = {550, 150, 550};
+      int grassX = -200;
+      int grassY = 350;
+      int treeTrunkX = 400;
+      int treeTrunkY = 400;
+      int treeLeafsX = 379; 
+      int treeLeafsY = 352;
+      int sunX = 150;
+      int sunY = 100;
+      
+      
+>>>>>>> 2481247542dcd3781efd47947a7608cbd77ef9a9
       for (int i = 0; i < 3; i++)
       {
           sunX += currentX * 0.01;
@@ -80,7 +100,7 @@ public class MotionParallaxMain extends JFrame {
       
       
       //Sets background for the sky
-      g.setColor(Color.blue);
+      g.setColor(backgroundColor);
       g.fillRect(0, 0, 500, 500);
       
             //draws the sun
@@ -112,10 +132,19 @@ public class MotionParallaxMain extends JFrame {
    private class MyMouseListener implements MouseListener
    {
       public void mousePressed(MouseEvent e)
+<<<<<<< HEAD
       {
           
         
       }
+=======
+      {     
+            backgroundColor = new Color(0,0,128);
+            repaint();
+        }
+      
+      
+>>>>>>> 2481247542dcd3781efd47947a7608cbd77ef9a9
       public void mouseClicked(MouseEvent e)
       {
         randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
@@ -126,6 +155,8 @@ public class MotionParallaxMain extends JFrame {
 
       public void mouseReleased(MouseEvent e)
       {
+          backgroundColor = new Color(0,191,245);
+          
       }
 
       public void mouseEntered(MouseEvent e)
@@ -134,9 +165,13 @@ public class MotionParallaxMain extends JFrame {
 
       public void mouseExited(MouseEvent e)
       {
+<<<<<<< HEAD
           currentX = 0;
           currentY = 0;
           repaint();
+=======
+         
+>>>>>>> 2481247542dcd3781efd47947a7608cbd77ef9a9
       }
    }
  
