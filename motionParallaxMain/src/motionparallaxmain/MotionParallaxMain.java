@@ -37,37 +37,28 @@ public class MotionParallaxMain extends JFrame {
    
    public void init()
    {
-      // Add a mouse listener and a mouse motion listener.
       
    }
-   
-   /**
-      paint method
-      @param g The applet's Graphics object.
-   */
    
    public void paint(Graphics g)
    {
       // Call the superclass's paint method.
       super.paint(g);
-      int darkGrayMountainX[] = {56, 250, 520};
-      int darkGreyMountainY[] = {550, 80, 550};
-      int lightGrayMountainX[] = {-450, 50, 450};
-      int lightGrayMountainY[] = {550, 150, 550};
-      int blackMountainX[] = {135, 450, 600};
-      int blackMountainY[] = {550, 150, 550};
-      int grassX = -200;
-      int grassY = 350;
-      int treeTrunkX = 400;
-      int treeTrunkY = 400;
-      int treeLeafsX = 379; 
-      int treeLeafsY = 352;
-      int sunX = 150;
-      int sunY = 100;
-      int num = 0;
-      
-
-      
+       int darkGrayMountainX[] = {56, 250, 520};
+       int darkGreyMountainY[] = {550, 80, 550};
+       int lightGrayMountainX[] = {-450, 50, 450};
+       int lightGrayMountainY[] = {550, 150, 550};
+       int blackMountainX[] = {135, 450, 600};
+       int blackMountainY[] = {550, 150, 550};
+       int grassX = -200;
+       int grassY = 350;
+       int treeTrunkX = 400;
+       int treeTrunkY = 400;
+       int treeLeafsX = 379; 
+       int treeLeafsY = 352;
+       int sunX = 150;
+       int sunY = 100;
+    
       for (int i = 0; i < 3; i++)
       {
           sunX += currentX * 0.01;
@@ -121,7 +112,9 @@ public class MotionParallaxMain extends JFrame {
    private class MyMouseListener implements MouseListener
    {
       public void mousePressed(MouseEvent e)
-      { 
+      {
+          
+        
       }
       public void mouseClicked(MouseEvent e)
       {
@@ -141,6 +134,9 @@ public class MotionParallaxMain extends JFrame {
 
       public void mouseExited(MouseEvent e)
       {
+          currentX = 0;
+          currentY = 0;
+          repaint();
       }
    }
  
