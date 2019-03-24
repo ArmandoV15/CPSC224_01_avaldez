@@ -60,9 +60,7 @@ public class MotionParallaxMain extends JFrame {
        int treeLeafsY = 352;
        int sunX = 150;
        int sunY = 100;
-    
-
-
+       
       for (int i = 0; i < 3; i++)
       {
           sunX += currentX * 0.01;
@@ -99,6 +97,7 @@ public class MotionParallaxMain extends JFrame {
       g.setColor(randomColor3);
       g.fillPolygon(blackMountainX, blackMountainY, 3);
       
+      
       //Draws the grass
       g.setColor(Color.GREEN);
       g.fillRect(grassX, grassY, 1500, 350);
@@ -115,6 +114,7 @@ public class MotionParallaxMain extends JFrame {
 
    private class MyMouseListener implements MouseListener
    {
+      // when the mouse is pressed and held down, the sky will turn to nighttime 
       public void mousePressed(MouseEvent e)
         {     
             backgroundColor = new Color(0,0,128);
@@ -122,7 +122,7 @@ public class MotionParallaxMain extends JFrame {
         }
       
       
-
+      // when the mouse is clicked and released, the mountains will change color
       public void mouseClicked(MouseEvent e)
       {
         randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
@@ -131,6 +131,7 @@ public class MotionParallaxMain extends JFrame {
         repaint();
       }
 
+       // when the mouse is released after being held, it will change back to nighttime
       public void mouseReleased(MouseEvent e)
       {
           backgroundColor = new Color(0,191,245);
@@ -153,6 +154,17 @@ public class MotionParallaxMain extends JFrame {
    {
       public void mouseDragged(MouseEvent e)
       {
+          currentX = e.getX() - 250;
+          currentY = e.getY() - 250;
+          try 
+          {
+              TimeUnit.MILLISECONDS.sleep(15);
+    	  }
+          catch (InterruptedException e1)
+          {
+	      e1.printStackTrace();
+    	  }
+    	  repaint();
       }
       
       public void mouseMoved(MouseEvent e)
