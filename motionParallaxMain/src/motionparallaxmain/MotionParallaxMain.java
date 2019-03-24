@@ -1,7 +1,7 @@
 /*
 Assignment 4
 Date: 3/25/19
-Names: Armando Valdez
+Names: Armando Valdez and Max Nelson
  */
 
 package motionparallaxmain;
