@@ -101,7 +101,7 @@ public class MotionParallaxMain extends JFrame {
       g.setColor(randomColor3);
       g.fillPolygon(blackMountainX, blackMountainY, 3);
       
-
+     // Draws the bird
       g.setColor(Color.BLACK);
       g.drawLine(birdX, 85, birdX2, 95);
       g.drawLine(birdX + 15,95, birdX2 + 15, 85);
@@ -130,12 +130,7 @@ public class MotionParallaxMain extends JFrame {
             backgroundColor = new Color(0,0,128);
             repaint();
        }
-      
-      
-      // when the mouse is clicked and released, the mountains will change color
-        
-      
-
+     //When mouse is clisked the mountian colors will change
       public void mouseClicked(MouseEvent e)
       {
         randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
@@ -149,18 +144,16 @@ public class MotionParallaxMain extends JFrame {
       {
           backgroundColor = new Color(0,191,245);
       }
-
+      // every time the mouse enters the window, the bird moves to the right 
       public void mouseEntered(MouseEvent e)
       {
           birdX += 100;
           birdX2 += 100;
           repaint();
       }
-
+      // when the mouse exits the window the picture returns to its original state
       public void mouseExited(MouseEvent e)
       {
-
-
           currentX = 0;
           currentY = 0;
           repaint();
@@ -170,6 +163,7 @@ public class MotionParallaxMain extends JFrame {
  
    private class MyMouseMotionListener implements MouseMotionListener
    {
+      // gets our mouse's X and Y values to compute our motion parallax
       public void mouseDragged(MouseEvent e)
       {
           currentX = e.getX() - 250;
@@ -186,7 +180,7 @@ public class MotionParallaxMain extends JFrame {
     	  }
     	  repaint();
       }
-      
+      // gets our mouse's X and Y values to compute our motion parallax
       public void mouseMoved(MouseEvent e)
       {
           currentX = e.getX() - 250;
