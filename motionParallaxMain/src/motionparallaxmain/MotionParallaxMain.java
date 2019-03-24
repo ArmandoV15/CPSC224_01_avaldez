@@ -89,11 +89,11 @@ public class MotionParallaxMain extends JFrame {
       g.fillOval(sunX, sunY, 50,50);
       
       //Draws the mountains 
-      g.setColor(Color.darkGray);
+      g.setColor(randomColor1);
       g.fillPolygon(darkGrayMountainX, darkGreyMountainY, 3);
-      g.setColor(Color.LIGHT_GRAY);
+      g.setColor(randomColor2);
       g.fillPolygon(lightGrayMountainX, lightGrayMountainY, 3);
-      g.setColor(Color.black);
+      g.setColor(randomColor3);
       g.fillPolygon(blackMountainX, blackMountainY, 3);
       
       //Draws the grass
@@ -117,6 +117,10 @@ public class MotionParallaxMain extends JFrame {
       }
       public void mouseClicked(MouseEvent e)
       {
+        randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
+        randomColor2 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
+        randomColor3 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
+        repaint();
       }
 
       public void mouseReleased(MouseEvent e)
