@@ -1,5 +1,7 @@
 /*
-
+Assignment 4
+Date: 3/25/19
+Names: Armando Valdez
  */
 
 package motionparallaxmain;
@@ -51,6 +53,7 @@ public class MotionParallaxMain extends JFrame {
       int blackMountainY[] = {550, 150, 550};
       int grassX = -200;
       int grassY = 350;
+      int treeTrunkX;
       
       for (int i = 0; i < 3; i++)
       {
@@ -64,6 +67,8 @@ public class MotionParallaxMain extends JFrame {
       
       grassX += currentX *.5;
       grassY += currentY *.5;
+      treeTrunkX += currentX *.5;
+      
       
       //Sets background for the sky
       g.setColor(Color.blue);
@@ -77,9 +82,17 @@ public class MotionParallaxMain extends JFrame {
       g.setColor(Color.black);
       g.fillPolygon(blackMountainX, blackMountainY, 3);
       
-          //Draws the grass
+      //Draws the grass
       g.setColor(Color.GREEN);
       g.fillRect(grassX, grassY, 1500, 350);
+      
+      //draw tree trunk
+      g.setColor(Color.BLACK);
+      g.fillRect(400, 400, 30, 80);
+      //draw tree leafs
+      g.setColor(Color.GRAY);
+      g.fillOval(375, 363, 80, 80);
+      
    }
 
 
