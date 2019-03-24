@@ -62,9 +62,6 @@ public class MotionParallaxMain extends JFrame {
        int treeLeafsY = 352;
        int sunX = 150;
        int sunY = 100; 
-       
-      
-      
 
       for (int i = 0; i < 3; i++)
       {
@@ -90,7 +87,7 @@ public class MotionParallaxMain extends JFrame {
       g.setColor(backgroundColor);
       g.fillRect(0, 0, 500, 500);
       
-            //draws the sun
+      //draws the sun
       g.setColor(Color.YELLOW);
       g.fillOval(sunX, sunY, 50,50);
       
@@ -125,11 +122,10 @@ public class MotionParallaxMain extends JFrame {
       public void mousePressed(MouseEvent e)
 
       {
-               backgroundColor = new Color(0,0,128);
+            backgroundColor = new Color(0,0,128);
             repaint();
         
       }
-
 
       public void mouseClicked(MouseEvent e)
       {
@@ -142,7 +138,6 @@ public class MotionParallaxMain extends JFrame {
       public void mouseReleased(MouseEvent e)
       {
           backgroundColor = new Color(0,191,245);
-          
       }
 
       public void mouseEntered(MouseEvent e)
@@ -155,6 +150,7 @@ public class MotionParallaxMain extends JFrame {
       public void mouseExited(MouseEvent e)
       {
 
+
           currentX = 0;
           currentY = 0;
           repaint();
@@ -166,6 +162,17 @@ public class MotionParallaxMain extends JFrame {
    {
       public void mouseDragged(MouseEvent e)
       {
+             currentX = e.getX() - 250;
+          currentY = e.getY() - 250;
+          try 
+          {
+              TimeUnit.MILLISECONDS.sleep(15);
+    	  }
+          catch (InterruptedException e1)
+          {
+	      e1.printStackTrace();
+    	  }
+    	  repaint();
       }
       
       public void mouseMoved(MouseEvent e)
