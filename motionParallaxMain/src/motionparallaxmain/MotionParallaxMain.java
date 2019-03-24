@@ -20,6 +20,7 @@ public class MotionParallaxMain extends JFrame {
    Color randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
    Color randomColor2 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
    Color randomColor3 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
+   Color backgroundColor = new Color(0,191,245);
    protected Timer timer;
    MotionParallaxMain()
    {
@@ -54,7 +55,7 @@ public class MotionParallaxMain extends JFrame {
       int darkGreyMountainY[] = {550, 80, 550};
       int lightGrayMountainX[] = {-450, 50, 450};
       int lightGrayMountainY[] = {550, 150, 550};
-      int blackMountainX[] = {135, 450, 600};
+      int blackMountainX[] = {135, 450, 700};
       int blackMountainY[] = {550, 150, 550};
       int grassX = -200;
       int grassY = 350;
@@ -64,9 +65,7 @@ public class MotionParallaxMain extends JFrame {
       int treeLeafsY = 352;
       int sunX = 150;
       int sunY = 100;
-      int num = 0;
       
-
       
       for (int i = 0; i < 3; i++)
       {
@@ -89,7 +88,7 @@ public class MotionParallaxMain extends JFrame {
       
       
       //Sets background for the sky
-      g.setColor(Color.blue);
+      g.setColor(backgroundColor);
       g.fillRect(0, 0, 500, 500);
       
             //draws the sun
@@ -121,8 +120,12 @@ public class MotionParallaxMain extends JFrame {
    private class MyMouseListener implements MouseListener
    {
       public void mousePressed(MouseEvent e)
-      { 
-      }
+      {     
+            backgroundColor = new Color(0,0,128);
+            repaint();
+        }
+      
+      
       public void mouseClicked(MouseEvent e)
       {
         randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
@@ -133,6 +136,8 @@ public class MotionParallaxMain extends JFrame {
 
       public void mouseReleased(MouseEvent e)
       {
+          backgroundColor = new Color(0,191,245);
+          
       }
 
       public void mouseEntered(MouseEvent e)
@@ -141,6 +146,7 @@ public class MotionParallaxMain extends JFrame {
 
       public void mouseExited(MouseEvent e)
       {
+         
       }
    }
  
