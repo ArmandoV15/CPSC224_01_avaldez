@@ -58,10 +58,14 @@ public class MotionParallaxMain extends JFrame {
       int blackMountainY[] = {550, 150, 550};
       int grassX = -200;
       int grassY = 350;
+      int treeTrunkX = 400;
+      int treeTrunkY = 400;
+      int treeLeafsX = 379; 
+      int treeLeafsY = 352;
       int sunX = 150;
       int sunY = 100;
-      int treeTrunkX = 0;
       
+
       
       for (int i = 0; i < 3; i++)
       {
@@ -78,6 +82,9 @@ public class MotionParallaxMain extends JFrame {
       grassX += currentX *.5;
       grassY += currentY *.5;
       treeTrunkX += currentX *.5;
+      treeTrunkY += currentY * .5;
+      treeLeafsX += currentX * .5;
+      treeLeafsY += currentY * .5;
       
       
       //Sets background for the sky
@@ -102,10 +109,10 @@ public class MotionParallaxMain extends JFrame {
       
       //draw tree trunk
       g.setColor(Color.BLACK);
-      g.fillRect(400, 400, 30, 80);
+      g.fillRect(treeTrunkX, treeTrunkY, 30, 80);
       //draw tree leafs
       g.setColor(Color.GRAY);
-      g.fillOval(375, 363, 80, 80);
+      g.fillOval(treeLeafsX, treeLeafsY, 70, 100);
       
    }
 
